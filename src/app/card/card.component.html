@@ -1,16 +1,31 @@
-<p-card *ngFor="let pokemon of allPokemon" [style]="{ width: '25rem', overflow: 'hidden' }">
+<div
+  class="card-container"
+  style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center"
+>
+  <p-card
+    *ngFor="let pokemon of allPokemon"
+    [style]="{ width: '25rem', overflow: 'hidden' }"
+  >
     <ng-template #header>
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <img alt="Card" class="w-full" style="height: 200px; width: auto;" [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + (pokemon.url.split('/')[6]) + '.png'" />
-        </div>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <img
+          alt="Card"
+          class="w-full"
+          style="height: 200px; width: auto"
+          [src]="
+            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
+            pokemon.url.split('/')[6] +
+            '.png'
+          "
+        />
+      </div>
     </ng-template>
     <ng-template #title>
-        <div style="text-align: center;">{{ pokemon.name }}</div>
+      <div style="text-align: center">{{ pokemon.name }}</div>
     </ng-template>
     <ng-template #subtitle>
-        <div style="text-align: center;">Pokemon type</div>
+      <div style="text-align: center">Pokemon type</div>
     </ng-template>
-    <p style="text-align: center;">
-        Pokemon Level
-    </p>
-</p-card>
+    <p style="text-align: center">Pokemon Level</p>
+  </p-card>
+</div>
