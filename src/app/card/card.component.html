@@ -1,6 +1,16 @@
-<p-card>
-    <img src="" alt="">
-    <h2>Pokemon Name</h2>
-    <p>Pokemon Type</p>
-    <p>Pokemon Lvl</p>
+<p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+    <ng-template #header>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <img alt="Card" class="w-full" style="height: 200px; width: auto;" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png" />
+        </div>
+    </ng-template>
+    <ng-template #title>
+        <div style="text-align: center;">Pokemon Name</div>
+    </ng-template>
+    <ng-template #subtitle>
+        <div style="text-align: center;">Pokemon type</div>
+    </ng-template>
+    <p style="text-align: center;">
+        Pokemon Level
+    </p>
 </p-card>

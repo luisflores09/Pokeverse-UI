@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-card',
-  imports: [CardModule],
+  imports: [CardModule, ButtonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
