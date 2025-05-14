@@ -12,11 +12,7 @@
           alt="Card"
           class="w-full"
           style="height: 200px; width: auto"
-          [src]="
-            'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
-            pokemon.url.split('/')[6] +
-            '.png'
-          "
+          [src]="getPokemonImage(pokemon)"
         />
       </div>
     </ng-template>

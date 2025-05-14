@@ -15,7 +15,7 @@ export class CardComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchData();
-   }
+  }
 
   fetchData() {
     this.httpClient
@@ -24,5 +24,17 @@ export class CardComponent implements OnInit {
         this.allPokemon = data.results;
         console.log(this.allPokemon);
       });
+  }
+
+  getPokemonImage(pokemon: any): string {
+    const pokemonId = pokemon.url.split('/')[6];
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId}.png`;
+  }
+
+  getPokemonDetails(pokemon: any): void {
+    const pokemonId = pokemon.url.split('/')[6];
+    this.httpClient.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}/`).subscribe((data: any) => {
+      console.log(data);
+    });
   }
 }
